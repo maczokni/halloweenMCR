@@ -1,6 +1,6 @@
 library(ggplot2)
 library(dplyr)
-library(emojifont)
+
 
 tagged_monsters <- read.csv("HalloweenMCR,MCRMONSTERS/mcrmonsters_2019_tagged.csv")
 
@@ -40,4 +40,10 @@ tagged_monsters %>%
   coord_flip() + 
   theme(axis.text = element_text(size = 18), 
         axis.title = element_text(size = 18))
+
+
+
+dog_pics <- tagged_monsters[grepl('dog', tagged_monsters$may_contain),] 
+
+
 
